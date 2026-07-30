@@ -221,11 +221,17 @@
   if (mailText) mailText.textContent = email;
 
   var linkedinCard = document.getElementById('linkedinCard');
-  if (linkedinCard && SITE.linkedin) {
-    linkedinCard.setAttribute('href', SITE.linkedin);
-    linkedinCard.hidden = false;
-    var lt = document.getElementById('linkedinText');
-    if (lt) lt.textContent = SITE.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com/, '');
+  if (linkedinCard) {
+    if (SITE.linkedin) {
+      linkedinCard.setAttribute('href', SITE.linkedin);
+      linkedinCard.removeAttribute('hidden');
+      var lt = document.getElementById('linkedinText');
+      if (lt) lt.textContent = SITE.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com/, '').replace(/\/$/, '');
+    } else {
+      // Sem URL configurada: remove o card do DOM em vez de apenas escondê-lo,
+      // para nunca sobrar um link apontando para "#".
+      linkedinCard.remove();
+    }
   }
 
   /* ---------------- Ano no rodapé ---------------- */
