@@ -8,14 +8,10 @@
      CONFIGURAÇÃO — altere aqui os seus dados de contato.
      ----------------------------------------------------------- */
   var SITE = {
-    // WhatsApp em formato internacional, só números.
     whatsapp: '5531975175889',
-    // E-mail dividido em duas partes para dificultar coleta por robôs de spam.
     mailUser: 'jeankassiocheib',
     mailDomain: 'gmail.com',
-    // Deixe vazio para esconder o card do LinkedIn. Ex.: 'https://www.linkedin.com/in/seu-perfil'
-    linkedin: '',
-    // Mensagem padrão do botão flutuante e dos cards de contato.
+    linkedin: 'https://www.linkedin.com/in/jeankassio/',
     waMessage: 'Olá, Jean! Vi o seu site e gostaria de conversar sobre um projeto.'
   };
 
