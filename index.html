@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jean Kássio — Desenvolvedor Backend | Node.js, PHP e Python</title>
+
+<meta name="description" content="Jean Kássio Almeida Cheib, desenvolvedor backend com mais de 15 anos de experiência em Node.js, TypeScript, PHP e Python. Disponível para projetos freelance e contratação PJ.">
+<meta name="author" content="Jean Kássio Almeida Cheib">
+<meta name="theme-color" content="#0a0b12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Jean Kássio — Desenvolvedor Backend">
+<meta property="og:description" content="Backend em Node.js, TypeScript, PHP e Python. Automações e IA local. Aberto a freelances e contratação PJ.">
+<meta property="og:image" content="assets/img/jeankassio.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/jeankassio.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script>
+  /* Aplica o tema antes da pintura para evitar "flash" de cor errada. */
+  (function () {
+    try {
+      var t = localStorage.getItem('jk-theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#sobre">Pular para o conteúdo</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="brand" href="#inicio" aria-label="Jean Kássio — início">
+      <span class="brand__mark" aria-hidden="true">JK</span>
+      <span class="brand__text">Jean Kássio</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#stack">Stack</a>
+      <a href="#trajetoria">Trajetória</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8M18.7 18.7l-1.8-1.8M7.1 7.1L5.3 5.3"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8z"/></svg>
+      </button>
+      <a class="btn btn--sm btn--primary header__cta" href="#orcamento">Simular orçamento</a>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="header__progress" id="scrollProgress" aria-hidden="true"></div>
+</header>
+
+<main>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__blob hero__blob--1"></div>
+    <div class="hero__blob hero__blob--2"></div>
+    <div class="hero__spot" id="heroSpot"></div>
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="pill reveal"><span class="pill__dot" aria-hidden="true"></span> Disponível para freelances e contratação PJ</p>
+
+      <h1 class="hero__title reveal">
+        Olá, eu sou<br>
+        <span class="grad">Jean Kássio</span>
+      </h1>
+
+      <p class="hero__role reveal" aria-live="polite">
+        <span class="hero__role-prefix">&lt;</span><span id="typed" class="hero__role-typed"></span><span class="caret" aria-hidden="true"></span><span class="hero__role-prefix">/&gt;</span>
+      </p>
+
+      <p class="hero__lead reveal">
+        Desenvolvedor backend autodidata, mineiro de Viçosa. Comecei a programar por curiosidade em
+        <strong>2011</strong> e nunca mais parei. Hoje construo <strong>APIs</strong>, <strong>automações</strong>
+        e <strong>integrações com IA</strong> — e atuo como PJ na Wisiex, do grupo Azify.
+      </p>
+
+      <div class="hero__cta reveal">
+        <a class="btn btn--primary" href="#orcamento">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__ico"><path d="M4 6.5h16M4 12h16M4 17.5h10"/></svg>
+          Simular meu orçamento
+        </a>
+        <a class="btn btn--ghost" href="#contato">Entrar em contato</a>
+      </div>
+
+      <ul class="hero__stats reveal">
+        <li><b data-count="15" data-suffix="+">0</b><span>anos programando</span></li>
+        <li><b data-count="10" data-suffix="+">0</b><span>anos vivendo de código</span></li>
+        <li><b data-count="4">0</b><span>linguagens no dia a dia</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__figure reveal">
+      <div class="avatar">
+        <div class="avatar__ring" aria-hidden="true"></div>
+        <img src="assets/img/jeankassio.jpg"
+             onerror="this.onerror=null;this.src='https://avatars.githubusercontent.com/u/26697873';"
+             width="320" height="320" alt="Foto de Jean Kássio Almeida Cheib" fetchpriority="high">
+      </div>
+      <div class="avatar__chip avatar__chip--1"><span>PJ • Wisiex / Azify</span></div>
+      <div class="avatar__chip avatar__chip--2"><span>RTX 3090 • 24 GB</span></div>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#sobre" aria-label="Rolar para baixo"><span></span></a>
+</section>
+
+<!-- ============================ SOBRE ============================ -->
+<section class="section" id="sobre">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow">01 — Sobre mim</p>
+      <h2 class="section__title">Quase biólogo, <span class="grad">desenvolvedor por vocação</span></h2>
+    </header>
+
+    <div class="about">
+      <div class="about__text reveal">
+        <p>
+          Meu nome é <strong>Jean Kássio Almeida Cheib</strong>, tenho 35 anos e sou de <strong>Viçosa, Minas Gerais</strong> —
+          mineiro de raiz, desses que raramente cruzaram a fronteira do estado. Divido a vida (e a casa) com a
+          <strong>Verônica Viana</strong>, minha noiva.
+        </p>
+        <p>
+          A programação começou como hobby em 2011, enquanto eu trabalhava como técnico em informática. Primeiro vieram os
+          blogs, depois uma tentativa frustrada com Delphi e, em 2012, o <strong>VB.NET</strong> — a linguagem em que
+          finalmente aprendi a programar de verdade. Naquela época eu escrevia software para resolver os meus próprios
+          problemas: um sistema de <em>mapeamento genético de Bettas</em>, um controle de fluxo de caixa e até um removedor
+          de vírus de pen-drive.
+        </p>
+        <p>
+          Em 2016, enquanto estudava para o ENEM com o objetivo de cursar Biologia, aprendi <strong>PHP</strong> quase por
+          acidente. Uma oportunidade de manutenção em blogs WordPress virou freelance na Workana, e o freelance virou uma
+          renda melhor do que qualquer emprego que eu já tivesse tido. A Biologia ficou para trás. Em 2020 mergulhei em
+          <strong>Node.js, JavaScript e TypeScript</strong>, que são hoje o meu dia a dia.
+        </p>
+        <p>
+          Autodidata desde o primeiro dia: tudo o que sei foi aprendido construindo coisas que precisavam funcionar.
+        </p>
+      </div>
+
+      <aside class="about__facts reveal" aria-label="Informações rápidas">
+        <ul class="facts">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.3 7-11a7 7 0 1 0-14 0c0 5.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <div><b>Viçosa — MG</b><span>Minas Gerais, Brasil</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></svg>
+            <div><b>35 anos</b><span>15+ anos com programação</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 5.6a5.1 5.1 0 0 0-7.2 0L12 6.8l-1.2-1.2a5.1 5.1 0 1 0-7.2 7.2L12 21l8.4-8.2a5.1 5.1 0 0 0 0-7.2z"/></svg>
+            <div><b>Noivo da Verônica Viana</b><span>Morando juntos</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M10 20v-5h4v5"/></svg>
+            <div><b>Wisiex — grupo Azify</b><span>Backend Node.js • PJ • São Paulo</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+            <div><b>Aberto a novos projetos</b><span>Freelance e contratação PJ</span></div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STACK ============================ -->
+<section class="section section--alt" id="stack">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow">02 — Stack</p>
+      <h2 class="section__title">O que eu uso para <span class="grad">construir</span></h2>
+      <p class="section__sub">Da API que sustenta o produto ao modelo de IA rodando na minha própria máquina.</p>
+    </header>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 17l-5-5 5-5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>
+        </div>
+        <h3>Backend &amp; Linguagens</h3>
+        <p>O núcleo do meu trabalho: APIs, regras de negócio, integrações e serviços que precisam rodar sem drama.</p>
+        <ul class="tags">
+          <li class="tag tag--hot">Node.js</li>
+          <li class="tag tag--hot">TypeScript</li>
+          <li class="tag tag--hot">JavaScript</li>
+          <li class="tag tag--hot">PHP</li>
+          <li class="tag">Python</li>
+          <li class="tag">Lua</li>
+          <li class="tag">REST APIs</li>
+          <li class="tag">SQL</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><rect x="9" y="9" width="6" height="6" rx="1.5"/><path d="M9 1.8v2.2M15 1.8v2.2M9 20v2.2M15 20v2.2M1.8 9H4M1.8 15H4M20 9h2.2M20 15h2.2"/></svg>
+        </div>
+        <h3>IA &amp; Modelos locais</h3>
+        <p>Rodo LLMs e modelos generativos na minha própria infraestrutura, com <strong>ComfyUI</strong> e <strong>Ollama</strong> numa RTX 3090 de 24 GB de VRAM.</p>
+        <ul class="tags">
+          <li class="tag tag--hot">LLMs</li>
+          <li class="tag">SD 1.5</li>
+          <li class="tag">SDXL</li>
+          <li class="tag">Flux</li>
+          <li class="tag">Chroma</li>
+          <li class="tag">Qwen</li>
+          <li class="tag">LTX</li>
+          <li class="tag">WanVideo</li>
+          <li class="tag">Ace-Step</li>
+          <li class="tag">Hunyuan 3D</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 5.5h16v13H4z"/><path d="M4 9.5h16M7.2 7h.01M9.7 7h.01"/></svg>
+        </div>
+        <h3>Web &amp; Sistemas</h3>
+        <p>Dez anos de estrada em projetos web: de sites e portais em WordPress a sistemas sob medida em PHP.</p>
+        <ul class="tags">
+          <li class="tag tag--hot">WordPress</li>
+          <li class="tag">Integrações</li>
+          <li class="tag">Webhooks</li>
+          <li class="tag">Scraping</li>
+          <li class="tag">Automação</li>
+          <li class="tag">Manutenção de legado</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M7.5 8.5L4 12l3.5 3.5M16.5 8.5L20 12l-3.5 3.5"/><path d="M9 20l6-16"/></svg>
+        </div>
+        <h3>Prompt Engineering</h3>
+        <p>Uso Claude e outros LLMs como parte real do fluxo de desenvolvimento — revisão, depuração e aceleração de entrega, sem abrir mão de entender cada linha.</p>
+        <ul class="tags">
+          <li class="tag tag--hot">Claude</li>
+          <li class="tag">Prompt design</li>
+          <li class="tag">Code review assistido</li>
+          <li class="tag">Debug guiado</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TRAJETÓRIA ============================ -->
+<section class="section" id="trajetoria">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow">03 — Trajetória</p>
+      <h2 class="section__title">De um blog no Blogger <span class="grad">até aqui</span></h2>
+    </header>
+
+    <ol class="timeline">
+      <li class="tl reveal">
+        <div class="tl__dot" aria-hidden="true"></div>
+        <div class="tl__box">
+          <span class="tl__year">2011</span>
+          <h3>O primeiro contato</h3>
+          <p>Técnico em informática e curioso por natureza. Comecei com blogs no Blogger, mexendo em HTML e CSS por conta própria. A primeira tentativa séria de programar foi com Delphi — e não deu certo.</p>
+        </div>
+      </li>
+
+      <li class="tl reveal">
+        <div class="tl__dot" aria-hidden="true"></div>
+        <div class="tl__box">
+          <span class="tl__year">2012</span>
+          <h3>VB.NET e os primeiros softwares</h3>
+          <p>Foi no VB.NET que eu finalmente aprendi a programar. Escrevia software para mim mesmo: mapeamento genético de Bettas, controle de fluxo de caixa e um removedor de vírus de pen-drive.</p>
+        </div>
+      </li>
+
+      <li class="tl reveal">
+        <div class="tl__dot" aria-hidden="true"></div>
+        <div class="tl__box">
+          <span class="tl__year">2014 — 2016</span>
+          <h3>Belo Horizonte</h3>
+          <p>Mudei para a capital e segui atuando como técnico em informática. Depois de dois anos, o plano não deu certo e voltei para a região de Viçosa.</p>
+        </div>
+      </li>
+
+      <li class="tl reveal tl--highlight">
+        <div class="tl__dot" aria-hidden="true"></div>
+        <div class="tl__box">
+          <span class="tl__year">2016</span>
+          <h3>A virada: PHP, WordPress e Workana</h3>
+          <p>Morando em Paula Cândido e estudando para o ENEM (mirando Biologia), aprendi PHP e criei meus primeiros sites em WordPress. Em setembro veio a oportunidade de dar manutenção em blogs — que virou freelance na <strong>Workana</strong>, com uma renda que superou qualquer emprego anterior. A Biologia deu lugar ao código.</p>
+        </div>
+      </li>
+
+      <li class="tl reveal">
+        <div class="tl__dot" aria-hidden="true"></div>
+        <div class="tl__box">
+          <span class="tl__year">2020</span>
+          <h3>Node.js entra em cena</h3>
+          <p>Migrei o foco para JavaScript e TypeScript com Node.js. Foi a mudança que definiu a fase mais técnica e mais madura da minha carreira.</p>
+        </div>
+      </li>
+
+      <li class="tl reveal tl--now">
+        <div class="tl__dot" aria-hidden="true"></div>
+        <div class="tl__box">
+          <span class="tl__year">Hoje</span>
+          <h3>Wisiex • grupo Azify</h3>
+          <p>Atuo como <strong>PJ</strong> desenvolvendo backend em Node.js para a Wisiex, em São Paulo. Em paralelo, programo em PHP, Python e Lua, e mantenho um laboratório de IA local rodando LLMs e modelos generativos. Sigo <strong>aberto a freelances e novas oportunidades PJ</strong>.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ SERVIÇOS ============================ -->
+<section class="section section--alt" id="servicos">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow">04 — Serviços</p>
+      <h2 class="section__title">Como eu posso <span class="grad">te ajudar</span></h2>
+      <p class="section__sub">Projetos do zero, evolução de sistemas existentes ou reforço pontual no seu time.</p>
+    </header>
+
+    <div class="services">
+      <article class="svc reveal">
+        <span class="svc__n">01</span>
+        <h3>APIs e backend em Node.js</h3>
+        <p>Serviços REST, autenticação, filas, integrações com gateways e terceiros. TypeScript quando o projeto pede robustez.</p>
+      </article>
+      <article class="svc reveal">
+        <span class="svc__n">02</span>
+        <h3>Sistemas e sites em PHP</h3>
+        <p>Painéis administrativos, áreas de membro, integrações e sistemas sob medida — com ou sem WordPress por trás.</p>
+      </article>
+      <article class="svc reveal">
+        <span class="svc__n">03</span>
+        <h3>Automações em Python</h3>
+        <p>Rotinas que economizam horas: coleta de dados, processamento em lote, relatórios e integrações entre sistemas.</p>
+      </article>
+      <article class="svc reveal">
+        <span class="svc__n">04</span>
+        <h3>IA aplicada ao seu produto</h3>
+        <p>Integração com LLMs, geração de imagem, vídeo, áudio e 3D. Inclusive com modelos rodando localmente, quando privacidade e custo importam.</p>
+      </article>
+      <article class="svc reveal">
+        <span class="svc__n">05</span>
+        <h3>Resgate de projeto legado</h3>
+        <p>Aquele sistema que ninguém mais mantém. Eu leio, entendo, documento e volto a evoluir com segurança.</p>
+      </article>
+      <article class="svc reveal">
+        <span class="svc__n">06</span>
+        <h3>Alocação PJ</h3>
+        <p>Reforço contínuo no seu time de desenvolvimento, com contrato PJ e disponibilidade combinada.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SIMULADOR / ORÇAMENTO ============================ -->
+<section class="section" id="orcamento">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow">05 — Orçamento</p>
+      <h2 class="section__title">Simule o valor do <span class="grad">seu projeto</span></h2>
+      <p class="section__sub">Escolha a duração estimada e veja o investimento na hora. Quanto maior o projeto, menor o valor da hora.</p>
+    </header>
+
+    <div class="sim reveal">
+      <!-- ---------- Controles ---------- -->
+      <div class="sim__panel">
+        <div class="sim__field">
+          <label class="sim__label" for="simAmount">Quanto tempo o projeto deve levar?</label>
+
+          <div class="sim__units" role="group" aria-label="Unidade de tempo">
+            <button type="button" class="unit is-active" data-unit="hours" aria-pressed="true">Horas</button>
+            <button type="button" class="unit" data-unit="days" aria-pressed="false">Dias</button>
+            <button type="button" class="unit" data-unit="weeks" aria-pressed="false">Semanas</button>
+            <button type="button" class="unit" data-unit="months" aria-pressed="false">Meses</button>
+          </div>
+
+          <div class="sim__inputrow">
+            <button type="button" class="stepper" id="simMinus" aria-label="Diminuir">−</button>
+            <div class="sim__numberwrap">
+              <input type="number" id="simAmount" value="40" min="1" step="1" inputmode="numeric"
+                     aria-describedby="simUnitLabel">
+              <span class="sim__unitlabel" id="simUnitLabel">horas</span>
+            </div>
+            <button type="button" class="stepper" id="simPlus" aria-label="Aumentar">+</button>
+          </div>
+
+          <input type="range" class="sim__range" id="simRange" min="1" max="400" value="40"
+                 aria-label="Duração estimada do projeto">
+          <div class="sim__rangemarks" id="simRangeMarks" aria-hidden="true"><span>1</span><span>400</span></div>
+        </div>
+
+        <div class="sim__tiers" id="simTiers">
+          <div class="tier" data-tier="1">
+            <div class="tier__top"><b>R$ 200</b><span>/hora</span></div>
+            <p>Projetos de até <strong>3 semanas</strong> (90 h)</p>
+          </div>
+          <div class="tier" data-tier="2">
+            <div class="tier__top"><b>R$ 150</b><span>/hora</span></div>
+            <p>De 3 semanas + 1 h até <strong>1 mês</strong> (91 a 120 h)</p>
+          </div>
+          <div class="tier" data-tier="3">
+            <div class="tier__top"><b>R$ 100</b><span>/hora</span></div>
+            <p>Projetos <strong>acima de 1 mês</strong> (121 h ou mais)</p>
+          </div>
+        </div>
+
+        <p class="sim__note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6h.01"/></svg>
+          Base de cálculo: jornada de <strong>6 h por dia</strong>, <strong>5 dias por semana</strong> — ou seja, 30 h por semana e 120 h por mês.
+        </p>
+      </div>
+
+      <!-- ---------- Resultado ---------- -->
+      <div class="sim__result" aria-live="polite">
+        <div class="sim__badge" id="simBadge">Faixa 1 · R$ 200/hora</div>
+
+        <p class="sim__resultlabel">Investimento estimado</p>
+        <p class="sim__price"><span class="sim__currency">R$</span><span id="simTotal">8.000</span></p>
+
+        <ul class="sim__breakdown">
+          <li><span>Horas de trabalho</span><b id="simHours">40 h</b></li>
+          <li><span>Valor da hora</span><b id="simRate">R$ 200</b></li>
+          <li><span>Duração aproximada</span><b id="simDuration">1 semana e 2 dias úteis</b></li>
+        </ul>
+
+        <div class="sim__hint" id="simHint"></div>
+
+        <a class="btn btn--primary btn--block" id="simWhats" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__ico btn__ico--fill"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.42 1.31-1.95 1.35-.5.05-.98.24-3.3-.69-2.78-1.1-4.53-3.95-4.67-4.14-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27a1 1 0 0 1 .72-.34h.51c.17 0 .39-.06.6.46.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.17.29.74 1.22 1.59 1.97 1.09.97 2.01 1.28 2.29 1.42.29.14.45.12.62-.07.17-.19.71-.83.9-1.11.19-.29.38-.24.64-.14.26.09 1.67.79 1.95.93.29.14.48.21.55.33.07.12.07.69-.17 1.37z"/></svg>
+          Pedir orçamento no WhatsApp
+        </a>
+
+        <p class="sim__disclaimer">Valor estimado com base na duração informada. O orçamento final depende do escopo e é fechado após conversarmos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTATO ============================ -->
+<section class="section section--alt" id="contato">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow">06 — Contato</p>
+      <h2 class="section__title">Vamos tirar sua ideia <span class="grad">do papel?</span></h2>
+      <p class="section__sub">Respondo rápido. Me conte o que você precisa e eu te digo se consigo ajudar — com sinceridade.</p>
+    </header>
+
+    <div class="contact">
+      <a class="contact__card contact__card--wa reveal" id="waCard" href="#" target="_blank" rel="noopener">
+        <span class="contact__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="fill"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.42 1.31-1.95 1.35-.5.05-.98.24-3.3-.69-2.78-1.1-4.53-3.95-4.67-4.14-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27a1 1 0 0 1 .72-.34h.51c.17 0 .39-.06.6.46.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.17.29.74 1.22 1.59 1.97 1.09.97 2.01 1.28 2.29 1.42.29.14.45.12.62-.07.17-.19.71-.83.9-1.11.19-.29.38-.24.64-.14.26.09 1.67.79 1.95.93.29.14.48.21.55.33.07.12.07.69-.17 1.37z"/></svg>
+        </span>
+        <div>
+          <b>WhatsApp</b>
+          <span>+55 (31) 97517-5889</span>
+        </div>
+        <svg class="contact__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M9 6h9v9"/></svg>
+      </a>
+
+      <a class="contact__card reveal" id="mailCard" href="#">
+        <span class="contact__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.6 7l8.4 6 8.4-6"/></svg>
+        </span>
+        <div>
+          <b>E-mail</b>
+          <span id="mailText">carregando…</span>
+        </div>
+        <svg class="contact__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M9 6h9v9"/></svg>
+      </a>
+
+      <a class="contact__card reveal" href="https://github.com/jeankassio" target="_blank" rel="noopener">
+        <span class="contact__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="fill"><path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.1.7-.22.7-.49l-.01-1.9c-2.84.62-3.44-1.2-3.44-1.2-.47-1.18-1.14-1.5-1.14-1.5-.93-.63.07-.62.07-.62 1.03.07 1.57 1.06 1.57 1.06.91 1.57 2.4 1.11 2.98.85.09-.67.36-1.11.65-1.37-2.27-.26-4.66-1.14-4.66-5.06 0-1.12.4-2.03 1.05-2.75-.1-.26-.45-1.3.1-2.71 0 0 .86-.28 2.81 1.05a9.7 9.7 0 0 1 5.12 0c1.95-1.33 2.81-1.05 2.81-1.05.55 1.41.2 2.45.1 2.71.65.72 1.05 1.63 1.05 2.75 0 3.93-2.39 4.8-4.67 5.05.37.32.69.94.69 1.9l-.01 2.82c0 .27.19.6.71.49A10.2 10.2 0 0 0 12 1.8z"/></svg>
+        </span>
+        <div>
+          <b>GitHub</b>
+          <span>@jeankassio</span>
+        </div>
+        <svg class="contact__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M9 6h9v9"/></svg>
+      </a>
+
+      <a class="contact__card reveal" href="https://www.instagram.com/_jeankassio" target="_blank" rel="noopener">
+        <span class="contact__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.9h.01"/></svg>
+        </span>
+        <div>
+          <b>Instagram</b>
+          <span>@_jeankassio</span>
+        </div>
+        <svg class="contact__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M9 6h9v9"/></svg>
+      </a>
+
+      <a class="contact__card reveal" href="https://www.facebook.com/JeanKassioAlmeida/" target="_blank" rel="noopener">
+        <span class="contact__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="fill"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
+        </span>
+        <div>
+          <b>Facebook</b>
+          <span>/JeanKassioAlmeida</span>
+        </div>
+        <svg class="contact__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M9 6h9v9"/></svg>
+      </a>
+
+      <!-- LinkedIn: definido em assets/js/main.js (SITE.linkedin). Fica oculto enquanto estiver vazio. -->
+      <a class="contact__card reveal" id="linkedinCard" href="#" target="_blank" rel="noopener" hidden>
+        <span class="contact__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="fill"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9.5 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21h-4z"/></svg>
+        </span>
+        <div>
+          <b>LinkedIn</b>
+          <span id="linkedinText">Perfil profissional</span>
+        </div>
+        <svg class="contact__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M9 6h9v9"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="brand__mark" aria-hidden="true">JK</span>
+      <div>
+        <b>Jean Kássio Almeida Cheib</b>
+        <span>Desenvolvedor Backend · Viçosa, MG</span>
+      </div>
+    </div>
+    <p class="footer__copy">© <span id="year">2026</span> Jean Kássio. Feito com café mineiro e muito código.</p>
+  </div>
+</footer>
+
+<!-- Botão flutuante do WhatsApp -->
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.42 1.31-1.95 1.35-.5.05-.98.24-3.3-.69-2.78-1.1-4.53-3.95-4.67-4.14-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27a1 1 0 0 1 .72-.34h.51c.17 0 .39-.06.6.46.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.17.29.74 1.22 1.59 1.97 1.09.97 2.01 1.28 2.29 1.42.29.14.45.12.62-.07.17-.19.71-.83.9-1.11.19-.29.38-.24.64-.14.26.09 1.67.79 1.95.93.29.14.48.21.55.33.07.12.07.69-.17 1.37z"/></svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jean Kássio Almeida Cheib",
+  "alternateName": "Jean Kássio",
+  "jobTitle": "Desenvolvedor Backend",
+  "image": "assets/img/jeankassio.jpg",
+  "description": "Desenvolvedor backend com mais de 15 anos de experiência em Node.js, TypeScript, PHP e Python, além de IA local com ComfyUI e Ollama.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Viçosa", "addressRegion": "MG", "addressCountry": "BR" },
+  "worksFor": { "@type": "Organization", "name": "Wisiex" },
+  "knowsAbout": ["Node.js", "TypeScript", "JavaScript", "PHP", "Python", "Lua", "WordPress", "LLM", "ComfyUI", "Ollama"],
+  "sameAs": [
+    "https://github.com/jeankassio",
+    "https://www.instagram.com/_jeankassio",
+    "https://www.facebook.com/JeanKassioAlmeida/"
+  ]
+}
+</script>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/simulador.js" defer></script>
+</body>
+</html>
