@@ -11,7 +11,7 @@ Site pessoal estático (HTML + CSS + JS puro). **Sem build, sem dependências, s
 ├── robots.txt
 ├── assets/
 │   ├── css/style.css          Todo o visual + temas dark/light
-│   ├── js/main.js             Tema, menu, animações, links de contato
+│   ├── js/main.js             Tema, menu, scroll spy, links de contato
 │   ├── js/simulador.js        Widget de simulação de orçamento
 │   └── img/
 │       ├── jeankassio.jpg     Avatar (cópia local do GitHub)
@@ -26,7 +26,8 @@ Site pessoal estático (HTML + CSS + JS puro). **Sem build, sem dependências, s
 | WhatsApp, e-mail, **LinkedIn**, mensagem padrão | `assets/js/main.js` | objeto `SITE`, no topo |
 | Regras de preço e jornada de trabalho | `assets/js/simulador.js` | objeto `CONFIG`, no topo |
 | Textos, timeline, serviços | `index.html` | — |
-| Cores da marca | `assets/css/style.css` | `:root { --brand-1 … }` |
+| Cor de destaque e tons | `assets/css/style.css` | `--accent` em `html[data-theme='dark']` e `[data-theme='light']` |
+| Fontes | `index.html` (link do Google Fonts) + `--serif` / `--sans` / `--mono` no CSS | — |
 
 ### LinkedIn
 
