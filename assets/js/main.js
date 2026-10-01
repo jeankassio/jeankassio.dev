@@ -6,7 +6,7 @@
     mailUser: 'jeankassiocheib',
     mailDomain: 'gmail.com',
     linkedin: 'https://www.linkedin.com/in/jeankassio/',
-    waMessage: 'Olá, Jean! Vi o seu site e gostaria de conversar sobre um projeto.'
+    waMessage: 'Olá, Jean! Vi o seu site e gostaria de conversar sobre um projeto ou uma oportunidade.'
   };
 
   window.SITE = SITE;
@@ -44,7 +44,10 @@
       if (e.target.tagName === 'A') closeNav();
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeNav();
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        closeNav();
+        burger.focus();
+      }
     });
     document.addEventListener('click', function (e) {
       if (!nav.classList.contains('open')) return;
